@@ -1,7 +1,7 @@
 provider "aws" {
 region = "eu-west-2"
 }
-resource "aws_instance" "example" {
-ami = "ami-0fb653ca2d3203ac1"
+resource "aws_instance" "my-instance" {
+ami = data.external.latest_ami.result.ImageId
 instance_type = "t2.micro"
 }
